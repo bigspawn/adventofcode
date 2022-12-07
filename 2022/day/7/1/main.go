@@ -157,26 +157,4 @@ func main() {
 	}
 
 	fmt.Println(total)
-
-	sort.Slice(pathsArr, func(i, j int) bool {
-		return paths[pathsArr[i]].total < paths[pathsArr[j]].total
-	})
-
-	var x int64
-	x = int64(70_000_000) - paths["/"].total
-	//fmt.Println("x", x)
-
-	x = int64(30_000_000) - x
-	//fmt.Println("x", x)
-
-	for _, p := range pathsArr {
-		m := paths[p]
-		//fmt.Println(p, m)
-
-		if m.total >= x {
-			fmt.Println("done", p, m.total)
-			return
-		}
-	}
-
 }
